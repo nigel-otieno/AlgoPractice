@@ -5,10 +5,10 @@
 //   reverse('Hello!') === '!olleH'
 // h e l l o
 function reverse(str) {
-	const arr = str.split('');
-	arr.reverse();
-	const res = arr.join('');
-	return res;
+	const arr = str.split('').reverse().join('');
+	// arr.reverse();
+	// const res = arr.join('');
+	return arr;
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
