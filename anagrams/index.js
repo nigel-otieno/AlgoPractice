@@ -12,27 +12,33 @@ function anagrams(stringA, stringB) {
   stringA = stringA.toLowerCase().replace(/[\W_]+/g, '');
   stringB = stringB.toLowerCase().replace(/[\W_]+/g, '');
 
-  if(stringA.length !== stringB.length){
-    return false;
-  };
+  const stringASorted = stringA.split('').sort().join('');
+  const stringBSorted = stringB.split('').sort().join('');
 
-  const charCountA = {}; 
+  return stringASorted === stringBSorted;
 
-  for(let x = 0; x < stringA.length; x++){
-    const charA = stringA[x];
-    charCountA[charA] = charCountA[charA] + 1 || 1;
-  };
 
-  for(let y = 0; y < stringB.length; y++){
-    const charB = stringB[y];
+  // if(stringA.length !== stringB.length){
+  //   return false;
+  // };
 
-    if(!charCountA[charB]){
-      return false;
-    } else {
-      charCountA[charB]--;
-    }
-  }; 
-  return true;
+  // const charCountA = {}; 
+
+  // for(let x = 0; x < stringA.length; x++){
+  //   const charA = stringA[x];
+  //   charCountA[charA] = charCountA[charA] + 1 || 1;
+  // };
+
+  // for(let y = 0; y < stringB.length; y++){
+  //   const charB = stringB[y];
+
+  //   if(!charCountA[charB]){
+  //     return false;
+  //   } else {
+  //     charCountA[charB]--;
+  //   }
+  // }; 
+  // return true;
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
