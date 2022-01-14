@@ -9,7 +9,30 @@
 //   anagrams('lol', 'lolc') --> False
 
 function anagrams(stringA, stringB) {
-  
+  stringA = stringA.toLowerCase().replace(/[\W_]+/g, '');
+  stringB = stringB.toLowerCase().replace(/[\W_]+/g, '');
+
+  if(stringA.length !== stringB.length){
+    return false;
+  };
+
+  const charCountA = {}; 
+
+  for(let x = 0; x < stringA.length; x++){
+    const charA = stringA[x];
+    charCountA[charA] = charCountA[charA] + 1 || 1;
+  };
+
+  for(let y = 0; y < stringB.length; y++){
+    const charB = stringB[y];
+
+    if(!charCountA[charB]){
+      return false;
+    } else {
+      charCountA[charB]--;
+    }
+  }; 
+  return true;
 }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
